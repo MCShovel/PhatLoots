@@ -6,7 +6,7 @@ import com.codisimus.plugins.phatloots.gui.InventoryListener;
 import com.codisimus.plugins.phatloots.listeners.*;
 import com.codisimus.plugins.phatloots.loot.*;
 import com.codisimus.plugins.phatloots.regions.RegionHook;
-import com.codisimus.plugins.phatloots.regions.RegionToolsRegionHook;
+//import com.codisimus.plugins.phatloots.regions.RegionToolsRegionHook;
 import com.codisimus.plugins.phatloots.regions.WorldGuardRegionHook;
 import com.google.common.io.Files;
 import java.io.*;
@@ -132,17 +132,17 @@ public class PhatLoots extends JavaPlugin {
             Money.registerButton();
         }
         if (mythicDropsSupport) {
-            MythicDropsItem.registerButtonAndTool();
+            //MythicDropsItem.registerButtonAndTool();
         }
 
         /* Register the command found in the plugin.yml */
         String command = (String) getDescription().getCommands().keySet().toArray()[0];
         handler = new CommandHandler(this, command);
         if (mythicDropsSupport) {
-            handler.registerCommands(ManageMythicDropsLootCommand.class);
+            //handler.registerCommands(ManageMythicDropsLootCommand.class);
         }
         if (mythicMobsSupport) {
-            handler.registerCommands(ManageMythicMobsLootCommand.class);
+            //handler.registerCommands(ManageMythicMobsLootCommand.class);
         }
         handler.registerCommands(LootCommand.class);
         handler.registerCommands(ManageLootCommand.class);
@@ -152,7 +152,7 @@ public class PhatLoots extends JavaPlugin {
         }
 
         /* Register RegionHooks */
-        registerRegionHook("RegionTools", new RegionToolsRegionHook());
+        //registerRegionHook("RegionTools", new RegionToolsRegionHook());
         registerRegionHook("WorldGuard", new WorldGuardRegionHook());
 
         /* Register ConfigurationSerializable classes */
@@ -164,12 +164,12 @@ public class PhatLoots extends JavaPlugin {
         ConfigurationSerialization.registerClass(Experience.class, "Experience");
         ConfigurationSerialization.registerClass(Money.class, "Money");
         if (mythicDropsSupport) {
-            ConfigurationSerialization.registerClass(MythicDropsItem.class, "MythicDropsItem");
-            ConfigurationSerialization.registerClass(UnidentifiedItem.class, "UnidentifiedItem");
-            ConfigurationSerialization.registerClass(Gem.class, "Gem");
+            //ConfigurationSerialization.registerClass(MythicDropsItem.class, "MythicDropsItem");
+            //ConfigurationSerialization.registerClass(UnidentifiedItem.class, "UnidentifiedItem");
+            //ConfigurationSerialization.registerClass(Gem.class, "Gem");
         }
         if (mythicMobsSupport) {
-            ConfigurationSerialization.registerClass(MythicMobsItem.class, "MythicMobsItem");
+            //ConfigurationSerialization.registerClass(MythicMobsItem.class, "MythicMobsItem");
         }
 
         /* Load External PhatLoots Addons */
@@ -224,8 +224,8 @@ public class PhatLoots extends JavaPlugin {
         pm.registerEvents(new PhatLootsListener(), this);
         pm.registerEvents(new InventoryListener(), this);
         if (pm.isPluginEnabled("Citizens")) {
-            logger.info("Listening for Citizens NPC deaths");
-            pm.registerEvents(new CitizensListener(), this);
+            //logger.info("Listening for Citizens NPC deaths");
+            //pm.registerEvents(new CitizensListener(), this);
         } else if (isDebug()) {
             debug("Plugin Citizens could not be found, support has been turned off.");
         }
@@ -325,8 +325,8 @@ public class PhatLoots extends JavaPlugin {
             debug("Fishing loot has been turned off.");
         }
         if (getConfig().getBoolean("VotifierLoot")) {
-            logger.info("Listening for Votifier votes");
-            pm.registerEvents(new VoteListener(), this);
+            //logger.info("Listening for Votifier votes");
+            //pm.registerEvents(new VoteListener(), this);
         } else if (isDebug()) {
             debug("Votifier loot has been turned off.");
         }
