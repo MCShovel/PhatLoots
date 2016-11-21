@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.codisimus.plugins.phatloots</groupId>
     <artifactId>PhatLoots</artifactId>
-    <version>1.2.0</version>
+    <version>4.2.3</version>
     <name>PhatLoots</name>
 
     <build>
@@ -17,7 +17,7 @@
                 <directory>${basedir}/src</directory>
                 <includes>
                     <include>config.yml</include>
-                    <include>echantments.yml</include>
+                    <include>enchantments.yml</include>
                     <include>lores.yml</include>
                     <include>plugin.yml</include>
                     <include>SampleLoot.yml</include>
